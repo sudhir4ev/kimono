@@ -1,0 +1,17 @@
+{
+  "name": "fe-mono",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^20.1.4",
+    "prettier": ">=2"
+  },
+  "private": true,
+  "workspaces": [
+    "tools",
+    "my-app"
+  ],
+  "scripts": {
+  }
+}

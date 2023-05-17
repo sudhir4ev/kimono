@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "module": "Node16",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES6",
+    "rootDirs": [
+      "src/"
+    ],
+    "outDir": "dist"
+  },
+  "include": [
+    "src"
+  ]
+}
