@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "Node16",
+    "allowSyntheticDefaultImports": true,
+    "target": "ES6",
+    "outDir": "dist",
+    "rootDirs": [
+      "."
+    ]
+  },
+  "include": [
+    "."
+  ]
+}
