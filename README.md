@@ -2,8 +2,13 @@ Template for building FE Apps
 
 
 ### Development
+See `scripts/install.sh`
 
-`yarn start`
+#### Install
+`yarn setup`
+
+#### Run
+`yarn workspace @evooq/app start`
 
 # Tooling
 All build and tools and setup in `wetkit` cli toolkit. See `tools` package folder. 

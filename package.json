@@ -13,5 +13,7 @@
     "my-app"
   ],
   "scripts": {
+    "setup": "sh scripts/install.sh",
+    "start": "yarn workspace app start"
   }
 }
