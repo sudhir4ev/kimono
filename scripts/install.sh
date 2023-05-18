@@ -1,6 +1,6 @@
-cd tools
+cd tools/wetkit
 yarn install
 yarn build
 
-cd ..
+cd ../../
 yarn install --force

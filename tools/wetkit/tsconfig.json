@@ -7,7 +7,7 @@
     "allowSyntheticDefaultImports": true,
     "target": "ES6",
     "rootDirs": [
-      "src/"
+      "wetkit/src/"
     ],
     "outDir": "dist"
   },

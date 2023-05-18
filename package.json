@@ -9,7 +9,7 @@
   },
   "private": true,
   "workspaces": [
-    "tools",
+    "tools/*",
     "my-app"
   ],
   "scripts": {
