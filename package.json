@@ -14,6 +14,6 @@
   ],
   "scripts": {
     "setup": "sh scripts/install.sh",
-    "start": "yarn workspace app start"
+    "start": "yarn workspace @evooq/my-app start"
   }
 }

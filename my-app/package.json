@@ -1,11 +1,11 @@
 {
-  "name": "@evooq/app",
+  "name": "@evooq/my-app",
   "version": "0.0.1",
   "license": "UNLICENSED",
   "scripts": {
     "start": "wetkit start",
     "build": "wetkit build",
-    "build:medusa": "wetkit build:medusa",
+    "start:medusa": "wetkit start:medusa",
     "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,js,jsx,css}\""
   },
   "dependencies": {

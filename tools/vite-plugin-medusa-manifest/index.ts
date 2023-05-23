@@ -1,7 +1,8 @@
 import fs from 'fs'
 import type { Plugin, Manifest } from 'vite'
+import buildMedusaStandaloneHtml from "./src/buildMedusaStandalone";
 
-function medusaManifest(): Plugin {
+function medusaManifest(options: MedusaPluginOptions = {}): Plugin {
   return {
     name: 'medusa-manifest',
     apply: 'build',
@@ -26,6 +27,17 @@ function medusaManifest(): Plugin {
       }
       await fs.promises.writeFile(manifestMedusaPath, JSON.stringify(manifestForMedusa, null, 2))
     },
+    transformIndexHtml(html, {chunk}) {
+      const { fileName, isEntry } = chunk
+      if(isEntry) {
+        const entryChunkFileName = fileName;
+        const { html: newHtml } = buildMedusaStandaloneHtml(html, {
+          entryChunkFileName
+        });
+        return newHtml
+      }
+      else return html;
+    }
   }
 }
 
@@ -36,3 +48,9 @@ function assert(condition: unknown, msg?: string): asserts condition {
 }
 
 export default medusaManifest
+
+type MedusaPluginOptions  = Partial<MedusaOptions>
+
+type MedusaOptions = {
+  manifest: boolean
+}

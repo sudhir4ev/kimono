@@ -4,10 +4,14 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsc --watch"
   },
   "devDependencies": {
-    "typescript": "^5.0.4",
-    "@evooq/vite-plugin-medusa-manifest": "*"
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "hyntax": "^1.1.9",
+    "node-source-walk": "^6.0.2"
   }
 }
