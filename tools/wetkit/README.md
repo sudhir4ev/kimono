@@ -17,3 +17,15 @@ Start dev server.
 
 ### `wetkit build`
 Build production package
+
+
+### `wetkit medusa build`
+Build production package
+
+### `medusa preview`
+Preview medusa build
+
+### `medusa setup`
+Bootstrap a medusa microfrontend app.
+- adds new entry file for medusa startup.
+

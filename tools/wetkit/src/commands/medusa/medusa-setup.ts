@@ -2,6 +2,11 @@ import { prompt } from "enquirer";
 import template, { ReactMedusaMicrofrontendTemplateVars } from "./medusa-main-microfrontend.template";
 import fs from "fs";
 
+/**
+ * Tasks
+ * 1. Add new entry file which exposes apis used by medusa
+ *    to bootstrap the microfrontend
+ */
 async function medusaSetup() {
 
   const answers:any = await prompt([
@@ -14,7 +19,7 @@ async function medusaSetup() {
     {
       type: 'input',
       name: 'rootComponentPath',
-      message: 'Root component path? (e.g.)',
+      message: 'Root component path?',
       required: true
     },
     {
@@ -24,18 +29,13 @@ async function medusaSetup() {
       initial: '/my-app',
       required: true
     },
-    {
-      type: 'input',
-      name: 'entryFileName',
-      message: 'Name of medusa entry file',
-      initial: 'main-microfrontend.ts',
-      required: true
-    },
   ])
 
-  console.log(`Creating ${answers.entryFileName} for new microfrontend \"${answers.appName}\".`)
+  const entryFileName = 'main-microfrontend.ts'
 
-  return MedusaAddEntryFile('main-microfrontend.ts', {
+  console.log(`Creating ${entryFileName} for new microfrontend \"${answers.appName}\".`)
+
+  return MedusaAddEntryFile(entryFileName, {
     appName: answers.appName,
     rootComponentPath: answers.rootComponentPath,
     hostPath: answers.hostPath
