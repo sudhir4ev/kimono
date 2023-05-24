@@ -2,15 +2,16 @@
 import path from 'path'
 import fs from 'fs'
 import sade from 'sade'
-import { fileURLToPath } from 'url'
-import { build, start } from './commands'
+import { prompt } from 'enquirer'
 import medusaPreview from "./commands/medusa/medusa-preview";
 import medusaBuild from "./commands/medusa/medusa-build";
-
-// const __filename = fileURLToPath(import.meta.url)
-// const __dirname = path.dirname(__filename)
+import start from "./commands/start";
+import build from "./commands/build";
+import MedusaAddEntryFile from "./commands/medusa/medusa-add-entry-file";
+import medusaSetup from "./commands/medusa/medusa-setup";
 
 const prog = sade('wetkit')
+
 
 ;(async () => {
   const pkg = JSON.parse(
@@ -52,6 +53,13 @@ const prog = sade('wetkit')
     .describe('Preview medusa build')
     .action(async () => {
       return medusaPreview()
+    })
+
+  prog
+    .command('medusa setup')
+    .describe('Bootstrap a medusa microfrontend app')
+    .action(async () => {
+      return medusaSetup()
     })
 
   prog.parse(process.argv)

@@ -1,6 +1,16 @@
-import React from "react";
+function template(vars: ReactMedusaMicrofrontendTemplateVars) {
+
+  const {
+    icons = {
+      default: "fa-light fa-film",
+      active: "fa-solid fa-film"
+    },
+    weight = 768
+  } = vars;
+
+  return `import React from "react";
 import ReactDOMClient from "react-dom/client";
-import App from "./app";
+import App from "${vars.rootComponentPath}";
 import singleSpaReact from "single-spa-react";
 import { getMenuManager, type MedusaProductProps } from "@evooq/medusa-core";
 
@@ -12,13 +22,13 @@ export const getOrchestratorLifecycle = () => {
 
       const menuManager = getMenuManager();
       menuManager.addItem({
-        classIcon: "fa-light fa-film",
-        classIconActive: "fa-solid fa-film",
+        classIcon: "${icons.default}",
+        classIconActive: "${icons.active}",
         isAvailable: () => true,
-        name: "My App",
+        name: "${vars.appName}",
         productId,
-        url: "/my-app",
-        weight: 768
+        url: "${vars.hostPath}",
+        weight: ${weight}
       });
 
     }
@@ -35,4 +45,19 @@ export const getSingleSpaLifecycle = () => {
     rootComponent: App
   });
   return { bootstrap, mount, unmount };
-};
+};`;
+
+}
+
+export default template;
+
+export type ReactMedusaMicrofrontendTemplateVars = {
+  weight?: number;
+  appName: string;
+  rootComponentPath: string,
+  hostPath: string,
+  icons?: {
+    default: string,
+    active: string
+  }
+}
