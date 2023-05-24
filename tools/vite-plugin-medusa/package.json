@@ -1,5 +1,5 @@
 {
-  "name": "@evooq/vite-plugin-medusa-manifest",
+  "name": "@evooq/vite-plugin-medusa",
   "version": "0.0.1",
   "main": "dist/index.js",
   "license": "MIT",

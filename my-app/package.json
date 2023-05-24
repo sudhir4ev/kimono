@@ -5,7 +5,8 @@
   "scripts": {
     "start": "wetkit start",
     "build": "wetkit build",
-    "start:medusa": "wetkit start:medusa",
+    "build:medusa": "wetkit medusa build",
+    "preview:medusa": "wetkit medusa preview",
     "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,js,jsx,css}\""
   },
   "dependencies": {

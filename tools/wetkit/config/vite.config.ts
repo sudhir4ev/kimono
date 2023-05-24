@@ -1,14 +1,15 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import medusaManifest from "@evooq/vite-plugin-medusa-manifest";
+import medusa from "@evooq/vite-plugin-medusa";
 
 export default defineConfig((configEnv) => {
   const isDevelopment = configEnv.mode === "development";
+  const isMedusaReady = configEnv.mode === "medusa";
 
   return {
     plugins: [
       react(),
-      medusaManifest()
+      isMedusaReady && medusa()
     ],
     build: {
       rollupOptions: {

@@ -332,6 +332,11 @@
     single-spa "5.9.4"
     zod "3.21.4"
 
+"@evooq/vite-plugin-medusa-manifest@*":
+  version "1.0.2"
+  resolved "https://npm-registry.evooq.ch/@evooq/vite-plugin-medusa-manifest/-/vite-plugin-medusa-manifest-1.0.2.tgz#757858c78db920a21dee03ae875f7780eb7da174"
+  integrity sha512-OL69KrgStJAOoO2rjEIdrBHjb/o6w8ixtQqzDKHMcqXP/1WHf8e9vLO33XRu6kv5cwpiUuozfHIHE9vXD7Bt6w==
+
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
   resolved "https://npm-registry.evooq.ch/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz"

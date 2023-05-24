@@ -7,7 +7,7 @@ function build() {
   return viteBuild({
     // any valid user config options, plus `mode` and `configFile`
     configFile,
-    root: process.cwd(),
+    root: process.cwd()
   })
 }
 

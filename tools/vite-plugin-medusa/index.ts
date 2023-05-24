@@ -2,7 +2,7 @@ import fs from 'fs'
 import type { Plugin, Manifest } from 'vite'
 import buildMedusaStandaloneHtml from "./src/buildMedusaStandalone";
 
-function medusaManifest(options: MedusaPluginOptions = {}): Plugin {
+function pluginMedusa(options: MedusaPluginOptions = {}): Plugin {
   return {
     name: 'medusa-manifest',
     apply: 'build',
@@ -10,7 +10,7 @@ function medusaManifest(options: MedusaPluginOptions = {}): Plugin {
     config(config) {
       assert(
         config.build?.manifest,
-        '[@evooq/vite-plugin-medusa-manifest] This plugin needs the vite build option "manifest" set to true.',
+        '[@evooq/vite-plugin-medusa] This plugin needs the vite build option "manifest" set to true.',
       )
     },
     async writeBundle({ dir }) {
@@ -47,7 +47,7 @@ function assert(condition: unknown, msg?: string): asserts condition {
   }
 }
 
-export default medusaManifest
+export default pluginMedusa
 
 type MedusaPluginOptions  = Partial<MedusaOptions>
 

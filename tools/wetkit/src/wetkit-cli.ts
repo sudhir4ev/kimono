@@ -4,6 +4,8 @@ import fs from 'fs'
 import sade from 'sade'
 import { fileURLToPath } from 'url'
 import { build, start } from './commands'
+import medusaPreview from "./commands/medusa/medusa-preview";
+import medusaBuild from "./commands/medusa/medusa-build";
 
 // const __filename = fileURLToPath(import.meta.url)
 // const __dirname = path.dirname(__filename)
@@ -24,7 +26,7 @@ const prog = sade('wetkit')
     .command('start')
     .describe('Start dev server')
     .action(async () => {
-      start()
+      return start()
     })
 
   /**
@@ -34,7 +36,22 @@ const prog = sade('wetkit')
     .command('build')
     .describe('build')
     .action(async () => {
-      build()
+      return build()
+    })
+
+
+  prog
+    .command('medusa build')
+    .describe('Build medusa package')
+    .action(async () => {
+      return medusaBuild()
+    })
+
+  prog
+    .command('medusa preview')
+    .describe('Preview medusa build')
+    .action(async () => {
+      return medusaPreview()
     })
 
   prog.parse(process.argv)
