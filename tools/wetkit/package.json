@@ -4,8 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@types/node": "^20.1.4",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.14",
+    "degit": "^2.8.4",
     "enquirer": "^2.3.6",
     "vite": "^4.3.5"
   },
