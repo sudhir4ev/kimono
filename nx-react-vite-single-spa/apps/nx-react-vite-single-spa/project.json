@@ -65,7 +65,7 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "apps/nx-react-vite-single-spa/**/*.{ts,tsx,js,jsx}"
+          "./apps/nx-react-vite-single-spa/**/*.{ts,tsx,js,jsx}"
         ]
       }
     }
